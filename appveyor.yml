@@ -34,7 +34,15 @@ install:
     - git submodule update --init --recursive
     - git lfs pull
     - call "%VCVARS%"
-    
+    - appveyor DownloadFile "https://download.qt.io/official_releases/qt/6.8/6.8.0/submodules/qt5compat-everywhere-src-6.8.0.tar.xz"
+    - 7z e qt5compat-everywhere-src-6.8.0.tar.xz
+    - 7z x -y qt5compat-everywhere-src-6.8.0.tar
+    - cd qt5compat-everywhere-src-6.8.0
+    - call C:\Qt\6.8.0\msvc2022_64\bin\qt-configure-module.bat .
+    - cmake --build .  --parallel
+    - cmake  --install .
+    - cd ..
+
 build_script:
     - python scripts\make.py %QT6% --build-config release
 
