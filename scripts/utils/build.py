@@ -27,19 +27,19 @@ def build(config):
         return
 
     # build release
-    cmakebuild = "cmake --build %s --config Release %s -- -m" % \
+    cmakebuild = "cmake --build %s --config Release %s" % \
            (config.builddir, " ".join(config.cmake_build_args()))
     print(cmakebuild)
     sp.run(cmakebuild, check=True)
 
     # build debug?!
     if config.buildconfig.lower() == "debug":
-        cmakebuild = "cmake --build %s --config Debug %s -- -m" % \
+        cmakebuild = "cmake --build %s --config Debug %s" % \
             (config.builddir, " ".join(config.cmake_build_args()))
         print(cmakebuild)
         sp.run(cmakebuild, check=True)
 
     # install
     if config.install:
-        sp.run("cmake --build %s --config Release --target INSTALL -- -m" %
+        sp.run("cmake --build %s --config Release --target INSTALL" %
                (config.builddir), check=True)
