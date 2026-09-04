@@ -1,7 +1,7 @@
 @echo off
 
 IF NOT EXIST pkgconf (
-  git clone --depth 1 -b pkgconf-3.0.3 https://github.com/pkgconf/pkgconf.git pkgconf
+  git clone --depth 1 -b pkgconf-3.0.6 https://github.com/pkgconf/pkgconf.git pkgconf
 )
 
 IF NOT EXIST zlib (
@@ -29,7 +29,7 @@ IF NOT EXIST libjxl (
 )
 
 IF NOT EXIST libaom (
-  git clone --depth 1 -b v3.14.1 https://aomedia.googlesource.com/aom libaom 
+  git clone --depth 1 -b v3.15.0 https://aomedia.googlesource.com/aom libaom 
 )
 
 IF NOT EXIST libwebp (
@@ -41,12 +41,12 @@ IF NOT EXIST libavif (
   cd libavif\ext
   git clone --single-branch https://chromium.googlesource.com/libyuv/libyuv
   cd libyuv
-  git checkout 5d03bf9ba
+  git checkout 26e56be0f
   cd ..\..\..
 )
 
 IF NOT EXIST openexr (
-  git clone --depth 1 -b v3.4.13 https://github.com/AcademySoftwareFoundation/openexr.git openexr
+  git clone --depth 1 -b v3.4.15 https://github.com/AcademySoftwareFoundation/openexr.git openexr
 )
 
 IF NOT EXIST xz (
@@ -66,11 +66,11 @@ IF NOT EXIST opencv (
 )
 
 IF NOT EXIST libexpat (
-  git clone --depth 1 -b R_2_8_2 https://github.com/libexpat/libexpat.git libexpat
+  git clone --depth 1 -b R_2_8_4 https://github.com/libexpat/libexpat.git libexpat
 )
 
 IF NOT EXIST exiv2 (
-  git clone --depth 1 -b v0.28.8 https://github.com/Exiv2/exiv2.git exiv2
+  git clone --depth 1 -b v0.28.9 https://github.com/Exiv2/exiv2.git exiv2
 )
 
 IF NOT EXIST libraw (
@@ -99,11 +99,11 @@ IF NOT EXIST x264 (
 )
 
 IF NOT EXIST libheif (
-  git clone --depth 1 -b v1.23.1 https://github.com/strukturag/libheif.git libheif
+  git clone --depth 1 -b v1.23.3 https://github.com/strukturag/libheif.git libheif
 )
 
 IF NOT EXIST extra-cmake-modules (
-  git clone --depth 1 -b v6.28.0 https://invent.kde.org/frameworks/extra-cmake-modules.git extra-cmake-modules
+  git clone --depth 1 -b v6.30.0-rc1 https://invent.kde.org/frameworks/extra-cmake-modules.git extra-cmake-modules
 )
 
 IF NOT EXIST jxrlib (
@@ -112,13 +112,13 @@ IF NOT EXIST jxrlib (
 )
 
 IF NOT EXIST karchive (
-  git clone --depth 1 -b v6.28.0 https://invent.kde.org/frameworks/karchive.git karchive
+  git clone --depth 1 -b v6.30.0-rc1 https://invent.kde.org/frameworks/karchive.git karchive
 )
 
 IF NOT EXIST kimageformats (
   git clone --single-branch https://invent.kde.org/frameworks/kimageformats.git kimageformats
   cd kimageformats
-  git checkout 7ec1170c86dc96323bef26c17cad13fa1a60dafd
+  git checkout 5d6dfb9012bedd7e86ebba271fa87388658147ea
   cd ..
 )
 
